@@ -1,21 +1,23 @@
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Segoe UI", sans-serif;
 }
+
 html,
 body,
 #root {
   height: 100%;
   width: 100%;
-  margin: 0;
 }
+
+/* App background */
 .App {
   min-height: 100%;
-  width: 100%;             
+  width: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -23,18 +25,36 @@ body,
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   padding: 20px;
 }
+
+/* Container */
+.ramadhan-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Title */
 .ramadhan-title {
   font-size: 3rem;
   color: #f9d976;
   margin-bottom: 15px;
   animation: glow 2s infinite alternate;
+  position: relative;
+  z-index: 2;
 }
+
+/* Text */
 .ramadhan-text {
   font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.85);
   max-width: 500px;
   margin-bottom: 25px;
+  position: relative;
+  z-index: 2;
 }
+
+/* Button */
 .nasheed-btn {
   padding: 12px 28px;
   font-size: 1rem;
@@ -44,12 +64,68 @@ body,
   color: #2c3e50;
   cursor: pointer;
   transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
 }
+
 .nasheed-btn:hover {
   background-color: #f7c948;
   transform: scale(1.05);
   box-shadow: 0 0 20px rgba(249, 217, 118, 0.7);
 }
+
+/* 🌙 Falling moons in front */
+.moons {
+  position: absolute;
+  inset: 0;
+  pointer-events: none; /* still allows button clicks */
+  z-index: 3; /* moons above text */
+}
+
+.moon {
+  position: absolute;
+  top: -10%;
+  color: rgba(249, 217, 118, 0.6); /* semi-transparent so text is readable */
+  text-shadow: 0 0 12px rgba(249, 217, 118, 0.6);
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Different positions, sizes & speeds */
+.moon:nth-child(1)  { left: 5%;  font-size: 14px; animation-duration: 9s; }
+.moon:nth-child(2)  { left: 15%; font-size: 20px; animation-duration: 12s; }
+.moon:nth-child(3)  { left: 25%; font-size: 16px; animation-duration: 10s; }
+.moon:nth-child(4)  { left: 35%; font-size: 22px; animation-duration: 14s; }
+.moon:nth-child(5)  { left: 45%; font-size: 18px; animation-duration: 11s; }
+.moon:nth-child(6)  { left: 55%; font-size: 24px; animation-duration: 15s; }
+.moon:nth-child(7)  { left: 65%; font-size: 16px; animation-duration: 10s; }
+.moon:nth-child(8)  { left: 75%; font-size: 20px; animation-duration: 13s; }
+.moon:nth-child(9)  { left: 85%; font-size: 14px; animation-duration: 9s; }
+.moon:nth-child(10) { left: 95%; font-size: 22px; animation-duration: 14s; }
+
+/* Reuse pattern for remaining moons */
+.moon:nth-child(n+11) {
+  animation-duration: 12s;
+  font-size: 18px;
+}
+
+/* Falling animation */
+@keyframes fall {
+  0% {
+    transform: translateY(-10%) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(120vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Glow animation for title */
 @keyframes glow {
   from {
     text-shadow: 0 0 8px #f9d976;
@@ -58,6 +134,8 @@ body,
     text-shadow: 0 0 25px #f9d976, 0 0 45px #f39c12;
   }
 }
+
+/* Mobile */
 @media (max-width: 600px) {
   .ramadhan-title {
     font-size: 2rem;
@@ -67,6 +145,7 @@ body,
     font-size: 1rem;
     max-width: 90%;
   }
+
   .nasheed-btn {
     padding: 10px 20px;
     font-size: 0.9rem;
