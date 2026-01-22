@@ -9,7 +9,6 @@ export default function RamadhanMubarak() {
 
   return (
     <div className="ramadhan-container">
-      {/* Falling Moons */}
       <div className="moons">
         {Array.from({ length: 20 }).map((_, i) => (
           <span key={i} className="moon">☪</span>
