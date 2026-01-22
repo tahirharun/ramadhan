@@ -1,0 +1,91 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Full screen setup */
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+/* App wrapper — FULL SCREEN BACKGROUND */
+.App {
+  min-height: 100%;
+  width: 100%;             
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  padding: 20px;
+}
+
+/* Title */
+.ramadhan-title {
+  font-size: 3rem;
+  color: #f9d976;
+  margin-bottom: 15px;
+  animation: glow 2s infinite alternate;
+}
+
+/* Text */
+.ramadhan-text {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 500px;
+  margin-bottom: 25px;
+}
+
+/* Play button */
+.nasheed-btn {
+  padding: 12px 28px;
+  font-size: 1rem;
+  border-radius: 30px;
+  border: none;
+  background-color: #f9d976;
+  color: #2c3e50;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nasheed-btn:hover {
+  background-color: #f7c948;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(249, 217, 118, 0.7);
+}
+
+/* Glow animation */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 8px #f9d976;
+  }
+  to {
+    text-shadow: 0 0 25px #f9d976, 0 0 45px #f39c12;
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .ramadhan-title {
+    font-size: 2rem;       /* slightly smaller title */
+  }
+
+  .ramadhan-text {
+    font-size: 1rem;       /* slightly smaller text */
+    max-width: 90%;        /* fit mobile screen */
+  }
+
+  .nasheed-btn {
+    padding: 10px 20px;    /* smaller button on mobile */
+    font-size: 0.9rem;
+  }
+}
