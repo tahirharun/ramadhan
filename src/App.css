@@ -6,7 +6,6 @@
   font-family: "Segoe UI", sans-serif;
 }
 
-/* Full screen setup */
 html,
 body,
 #root {
@@ -15,7 +14,6 @@ body,
   margin: 0;
 }
 
-/* App wrapper — FULL SCREEN BACKGROUND */
 .App {
   min-height: 100%;
   width: 100%;             
@@ -29,7 +27,6 @@ body,
   padding: 20px;
 }
 
-/* Title */
 .ramadhan-title {
   font-size: 3rem;
   color: #f9d976;
@@ -37,7 +34,6 @@ body,
   animation: glow 2s infinite alternate;
 }
 
-/* Text */
 .ramadhan-text {
   font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.85);
@@ -45,7 +41,6 @@ body,
   margin-bottom: 25px;
 }
 
-/* Play button */
 .nasheed-btn {
   padding: 12px 28px;
   font-size: 1rem;
@@ -63,7 +58,6 @@ body,
   box-shadow: 0 0 20px rgba(249, 217, 118, 0.7);
 }
 
-/* Glow animation */
 @keyframes glow {
   from {
     text-shadow: 0 0 8px #f9d976;
@@ -73,19 +67,18 @@ body,
   }
 }
 
-/* Mobile responsive */
 @media (max-width: 600px) {
   .ramadhan-title {
-    font-size: 2rem;       /* slightly smaller title */
+    font-size: 2rem;
   }
 
   .ramadhan-text {
-    font-size: 1rem;       /* slightly smaller text */
-    max-width: 90%;        /* fit mobile screen */
+    font-size: 1rem;
+    max-width: 90%;
   }
 
   .nasheed-btn {
-    padding: 10px 20px;    /* smaller button on mobile */
+    padding: 10px 20px;
     font-size: 0.9rem;
   }
 }
